@@ -1,8 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import './index.css';
+import store from './lib/store';
+
+import { Provider } from 'react-redux';
+import InboxScreen from './components/InboxScreen';
+
 
 function App() {
-  return (
+  return (<>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,7 +25,10 @@ function App() {
         </a>
       </header>
     </div>
-  );
+    <Provider store={store}>
+      <InboxScreen />
+    </Provider>
+    </>);
 }
 
 export default App;
